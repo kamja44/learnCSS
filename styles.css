@@ -1,9 +1,23 @@
 .wrapper {
   display: flex;
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+  justify-content: space-around;
+  /* align-items: center; */
+  /* align-items: stretch; */
+  /* stretch의 child는 height를 가지고 있으면 안된다. 
+  container의 높이만큼의 길이를 가진다.*/
+  align-items: flex-end;
+  height: 200vh;
+  /* 
+    justify-content -> main axis
+    align-items -> cross axis 
+  */
 }
 
 .box {
   width: 200px;
+  /* height: 200px; */
   height: 200px;
   background-color: coral;
   color: white;
