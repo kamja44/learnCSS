@@ -1,22 +1,21 @@
 .wrapper {
+  /* flex-direction의 default value는 row이다. */
   display: flex;
-  /* justify-content: center; */
-  /* justify-content: space-between; */
-  justify-content: space-around;
-  /* align-items: center; */
-  /* align-items: stretch; */
-  /* stretch의 child는 height를 가지고 있으면 안된다. 
-  container의 높이만큼의 길이를 가진다.*/
-  align-items: flex-end;
-  height: 200vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* 
-    justify-content -> main axis
-    align-items -> cross axis 
-  */
+  flex-direction:column이기 때문에
+  align-items -> main axis
+  justify-content -> cross axis가 된다. */
+  height: 150vh;
+  align-items: stretch;
+  justify-content: space-around;
 }
 
 .box {
-  width: 200px;
+  /* width: 200px; */
+  /* width: 200px; */
   /* height: 200px; */
   height: 200px;
   background-color: coral;
