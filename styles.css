@@ -1,30 +1,20 @@
 .father {
   display: flex;
+  /* flex-direction: column; */
+  flex-direction: row;
   justify-content: space-around;
   width: 100%;
+  height: 100vh;
 }
 /* 
-  flex-grow, flex-shrink -> child 에게 주는 property
-
-  - flex-shrink
-element의 행동을 정의
-flex-shrink:1이 기본값이다.
-화면의 픽셀이 감소할 때
-어떤 요소를 더 많이 변경시킬것인지 명시한다.
-flex-shrink:2로 지정된 요소는 flex-shrink:1로 지정된 요소보다
-2배 더 많이 변화한다.
-
-  - flex-grow
-element의 행동을 정의
-flex-grow:0이 기본값이다.
-화면의 픽셀이 증가할 때
-어떤 요소를 더 많이 변경시킬것인지 명시힌다.
-flex-grow:1로 지정된 요소는 flex-grow:0으로 지정된 요소보다
-2배 더 많이 변화한다.
+  -flex-basis
+  child에 적용되는 요소
+  element에게 크기의 초기값을 설정한다.(모양이 바뀌기 전의)
+  flex-direction:row일 경우 width로 동작한다.
+  flex-direction:column일 경우 height로 동작한다.
 */
 .child {
-  width: 200px;
-  height: 200px;
+  flex-basis: 300px;
   background: coral;
   color: white;
   font-size: 40px;
@@ -35,6 +25,5 @@ flex-grow:1로 지정된 요소는 flex-grow:0으로 지정된 요소보다
 
 .child:nth-child(2) {
   background: black;
-  /* flex-shrink: 2; */
-  flex-grow: 2;
+  flex-grow: 1;
 }
