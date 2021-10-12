@@ -1,23 +1,40 @@
 .father {
   display: flex;
   justify-content: space-around;
-  height: 100vh;
-  /* flex-wrap: wrap; */
-  /* flex-direction: row-reverse; */
-  /* flex-direction: column-reverse; */
-  flex-wrap: wrap-reverse;
-  /* align-content -> line 사이의 간격을 조절한다.
-  첫번째 줄과 두번째 줄 사이의 간격 */
-  align-content: space-around;
+  width: 100%;
 }
+/* 
+  flex-grow, flex-shrink -> child 에게 주는 property
 
+  - flex-shrink
+element의 행동을 정의
+flex-shrink:1이 기본값이다.
+화면의 픽셀이 감소할 때
+어떤 요소를 더 많이 변경시킬것인지 명시한다.
+flex-shrink:2로 지정된 요소는 flex-shrink:1로 지정된 요소보다
+2배 더 많이 변화한다.
+
+  - flex-grow
+element의 행동을 정의
+flex-grow:0이 기본값이다.
+화면의 픽셀이 증가할 때
+어떤 요소를 더 많이 변경시킬것인지 명시힌다.
+flex-grow:1로 지정된 요소는 flex-grow:0으로 지정된 요소보다
+2배 더 많이 변화한다.
+*/
 .child {
   width: 200px;
   height: 200px;
-  background-color: coral;
+  background: coral;
   color: white;
-  font-size: 38px;
+  font-size: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.child:nth-child(2) {
+  background: black;
+  /* flex-shrink: 2; */
+  flex-grow: 2;
 }
