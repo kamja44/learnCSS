@@ -1,38 +1,23 @@
 .father {
-  /* flex-direction의 default value는 row이다. */
   display: flex;
   justify-content: space-around;
   height: 100vh;
+  /* flex-wrap: wrap; */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column-reverse; */
+  flex-wrap: wrap-reverse;
+  /* align-content -> line 사이의 간격을 조절한다.
+  첫번째 줄과 두번째 줄 사이의 간격 */
+  align-content: space-around;
 }
 
 .child {
   width: 200px;
-  /* height: 200px; */
   height: 200px;
   background-color: coral;
   color: white;
   font-size: 38px;
-}
-
-/* 
-  justify-content와 align-items는
-  father가 child를 움직였지만
-  align-self는
-  child가 스스로 움직인다.
-*/
-/*
-order -> 요소의 순서를 바꾼다.
-order은 자식에게 적용한다.
-기본적으로 order의 기본값은 0이다.
-즉, 2번째 요소의 order을 1이라고 한다면
-1번째 요소와 3번째 요소의 order은 0이기 때문에
-2번째 요소가 맨 뒤로 밀려난다.
-*/
-.child:nth-child(2) {
-  align-self: center;
-  order: 1;
-}
-
-.child:nth-child(3) {
-  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
