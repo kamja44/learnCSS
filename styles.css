@@ -1,29 +1,37 @@
-.father {
-  display: flex;
-  /* flex-direction: column; */
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  height: 100vh;
-}
 /* 
-  -flex-basis
-  child에 적용되는 요소
-  element에게 크기의 초기값을 설정한다.(모양이 바뀌기 전의)
-  flex-direction:row일 경우 width로 동작한다.
-  flex-direction:column일 경우 height로 동작한다.
+  grid도 flex처럼 부모 속성에 지정해야한다.
 */
-.child {
-  flex-basis: 300px;
-  background: coral;
-  color: white;
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.father {
+  display: grid;
+  /* 
+  grid-template-columns를 이용하여 column의 개수와 크기를 지정할 수 있다.
+  1번째 column -> 20px
+  2번째 column -> 55px
+  3번째 column -> 89px
+  */
+  /* grid-template-columns: 20px 55px 89px 100px; */
+  grid-template-columns: 250px 250px 250px;
+
+  /* 
+    grid-template-rows를 이용하여 row의 개수와 크기를 지정할 수 있다.
+  */
+  grid-template-rows: 100px 50px 300px;
+  /* 
+  column-gap -> column 사이의 공간을 지정한다.
+  */
+  /* column-gap: 10px; */
+  /* 
+  row-gap -> row 사이의 공간을 지정한다.
+  */
+  /* row-gap: 10px; */
+
+  /* gap -> column 과 row 사이의 공간을 동시에 지정한다. */
+  gap: 10px;
 }
 
-.child:nth-child(2) {
-  background: black;
-  flex-grow: 1;
+.child {
+  background: coral;
+  color: white;
+  font-size: 30px;
+  text-align: center;
 }
