@@ -1,37 +1,40 @@
-/* 
-  grid도 flex처럼 부모 속성에 지정해야한다.
-*/
-.father {
+.grid {
   display: grid;
+  grid-template-columns: auto 200px; /*repeat(4, 200px);*/
+  /* auto를 이용하면 이용할 수 있는 모든 공간을
+  이용한다. 공간 전부를 이용할 수 없는 경우 200px을 적용한다. */
+  grid-template-rows: 100px repeat(2, 200px) 100px;
   /* 
-  grid-template-columns를 이용하여 column의 개수와 크기를 지정할 수 있다.
-  1번째 column -> 20px
-  2번째 column -> 55px
-  3번째 column -> 89px
+    columns와 rows를 4x4형태로 만들었다.
+    grid-template-areas를 이용하여
+    각 칸의 역할을 지정할 수 있다
+    grid-template-areas를 이용하여 역할을 지정한 후
+    
+    역할을 할당할 클래스로 가서 역할명을 지정해줘야한다.
+    ex => .header{grid-area: "header"}
+    grid-area와 grid-template-areas의 역할 명은 같아야 한다.
   */
-  /* grid-template-columns: 20px 55px 89px 100px; */
-  grid-template-columns: 250px 250px 250px;
-
-  /* 
-    grid-template-rows를 이용하여 row의 개수와 크기를 지정할 수 있다.
-  */
-  grid-template-rows: 100px 50px 300px;
-  /* 
-  column-gap -> column 사이의 공간을 지정한다.
-  */
-  /* column-gap: 10px; */
-  /* 
-  row-gap -> row 사이의 공간을 지정한다.
-  */
-  /* row-gap: 10px; */
-
-  /* gap -> column 과 row 사이의 공간을 동시에 지정한다. */
-  gap: 10px;
+  grid-template-areas:
+    "header header header header"
+    "content content content nav"
+    "content content content nav"
+    "footer footer footer footer";
 }
 
-.child {
-  background: coral;
-  color: white;
-  font-size: 30px;
-  text-align: center;
+.header {
+  background-color: #2ecc71;
+  grid-area: header;
+}
+.content {
+  background-color: #3498db;
+  grid-area: content;
+}
+.nav {
+  background-color: #8e44ad;
+  grid-area: nav;
+}
+
+.footer {
+  background-color: #f39c12;
+  grid-area: footer;
 }
