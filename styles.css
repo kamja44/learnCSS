@@ -1,17 +1,18 @@
 .grid {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(4, 100px);
+  grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line] 100px;
+  grid-template-rows: repeat(4, 100px [kamja-line]);
 }
+/* 난 이거 별루 */
 /* 
   span은 시작점과 끝점을 적는걸 대신한다.
   즉, span에 크기를 명시해주면 된다.
 */
 .header {
   background-color: #2ecc71;
-  /* grid-column: 1/5; */
-  grid-column: span 4;
+  grid-column: first-line / fifth-line;
+  /* grid-column: span 4; */
   /* grid-column: 1/-1 
   음수는 거꾸로 센다. 즉, 5=-1, 4=-2
   */
@@ -23,7 +24,8 @@
   grid-column: span 3;
   /* grid-row: 2/4; */
   /* grid-row:2/-2 */
-  grid-row: 2 / span 2;
+  /* grid-row: 2 / span 2; */
+  grid-row: kamja-line 1 / kamja-line 3;
   /* 2 / span 2 -> 2번째 row부터 시작한다.
   즉, span에 시작점을 명시한다. */
 }
