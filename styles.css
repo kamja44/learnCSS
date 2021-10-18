@@ -7,33 +7,26 @@
 
 .header {
   background-color: #2ecc71;
-  /* 1번째 line에서 시작하고 2번째 line에서 끝난다.
-      초록색 왼쪽선이 1번째 line
-      초록색 오른쪽선과 파란색 왼쪽선 사이선이 2번째 line
+  grid-column: 1/5;
+  /* grid-column: 1/-1 
+  음수는 거꾸로 센다. 즉, 5=-1, 4=-2
   */
-  grid-column-start: 1;
-  /* grid-column-end: 2; */
-  /* grid-column-end의 값이 3이라면
-  파란색 오른쪽의 영역에서 끝난다.
-  */
-  /* grid-column-end: 3; */
-  grid-column-end: 5;
 }
 .content {
   background-color: #3498db;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-column: 1/4;
+  /* grid-colimn:1/-2 */
+  grid-row: 2/4;
+  /* grid-row:2/-2 */
 }
 .nav {
   background-color: #8e44ad;
-  grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row: 2/4;
+  /* grid-row:2/-2 */
 }
 
 .footer {
   background-color: #f39c12;
-  grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column: 1/5;
+  /* grid-column:1/-1 */
 }
