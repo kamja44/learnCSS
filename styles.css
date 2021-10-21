@@ -1,44 +1,36 @@
 .grid {
   display: grid;
-  gap: 10px;
-  grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line] 100px;
-  grid-template-rows: repeat(4, 100px [kamja-line]);
+  gap: 5px;
+  /* fr -> fraction -> grid에서 사용 가능한 공간 */
+  /* 
+    grid는 height가 없다. 즉, height를 설정해야 rows를 fr로 설정해도 올바른 값을 얻을 수 있다.
+  */
+  height: 50vh;
+  grid-template:
+    "header header header header" 1fr /* header의 높이 지정*/
+    "content content content nav " 2fr
+    "footer footer footer footer" 1fr /1fr 1fr 1fr 1fr /* 1fr -> 높이 지정 / 슬래시 후 fr -> 각 너비 지정*/;
+  /* 
+  // 대괄호 안에 이름을 지정할 수 있다.
+    [header-start]"header header header header" 1fr[header-end]
+    [content-start]"content content content nav " 2fr[content-end]
+    [footer-start]"footer footer footer footer" 1fr [footer-end]/1fr 1fr 1fr 1fr 
+    */
 }
-/* 난 이거 별루 */
-/* 
-  span은 시작점과 끝점을 적는걸 대신한다.
-  즉, span에 크기를 명시해주면 된다.
-*/
 .header {
   background-color: #2ecc71;
-  grid-column: first-line / fifth-line;
-  /* grid-column: span 4; */
-  /* grid-column: 1/-1 
-  음수는 거꾸로 센다. 즉, 5=-1, 4=-2
-  */
+  grid-area: header;
 }
 .content {
   background-color: #3498db;
-  /* grid-column: 1/4; */
-  /* grid-colimn:1/-2 */
-  grid-column: span 3;
-  /* grid-row: 2/4; */
-  /* grid-row:2/-2 */
-  /* grid-row: 2 / span 2; */
-  grid-row: kamja-line 1 / kamja-line 3;
-  /* 2 / span 2 -> 2번째 row부터 시작한다.
-  즉, span에 시작점을 명시한다. */
+  grid-area: content;
 }
 .nav {
   background-color: #8e44ad;
-  /* grid-row: 2/4; */
-  /* grid-row:2/-2 */
-  grid-row: 2 / span 2;
+  grid-area: nav;
 }
 
 .footer {
   background-color: #f39c12;
-  /* grid-column: 1/5; */
-  /* grid-column:1/-1 */
-  grid-column: span 4;
+  grid-area: footer;
 }
