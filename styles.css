@@ -3,18 +3,18 @@ body {
   text-align: center;
 }
 .grid {
+  background-color: coral;
   display: grid;
   gap: 5px;
-  height: 50vh;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  /* justify-items -> 수평 */
-  /* align-items -> 수직 */
-  /* justify-items와 align-items의 기본값은 stretch */
-  /* justify-items: center;
-  align-items: center; */
-  place-items: stretch center;
-  /* place-item: align-items(수직) justify-items(수평) */
+  height: 150vh;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 200px);
+  /* justify-content: center; */
+  /* justify-content 수평으로 움직임 */
+  /* align-content: space-around; */
+  /* align-content 수직으로 움직임 */
+  place-content: end center;
+  /* place-content: align-content justify-content */
 }
 .header {
   background-color: #2ecc71;
