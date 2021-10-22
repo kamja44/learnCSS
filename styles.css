@@ -1,36 +1,31 @@
+body {
+  font-size: 30px;
+  text-align: center;
+}
 .grid {
   display: grid;
   gap: 5px;
-  /* fr -> fraction -> grid에서 사용 가능한 공간 */
-  /* 
-    grid는 height가 없다. 즉, height를 설정해야 rows를 fr로 설정해도 올바른 값을 얻을 수 있다.
-  */
   height: 50vh;
-  grid-template:
-    "header header header header" 1fr /* header의 높이 지정*/
-    "content content content nav " 2fr
-    "footer footer footer footer" 1fr /1fr 1fr 1fr 1fr /* 1fr -> 높이 지정 / 슬래시 후 fr -> 각 너비 지정*/;
-  /* 
-  // 대괄호 안에 이름을 지정할 수 있다.
-    [header-start]"header header header header" 1fr[header-end]
-    [content-start]"content content content nav " 2fr[content-end]
-    [footer-start]"footer footer footer footer" 1fr [footer-end]/1fr 1fr 1fr 1fr 
-    */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  /* justify-items -> 수평 */
+  /* align-items -> 수직 */
+  /* justify-items와 align-items의 기본값은 stretch */
+  /* justify-items: center;
+  align-items: center; */
+  place-items: stretch center;
+  /* place-item: align-items(수직) justify-items(수평) */
 }
 .header {
   background-color: #2ecc71;
-  grid-area: header;
 }
 .content {
   background-color: #3498db;
-  grid-area: content;
 }
 .nav {
   background-color: #8e44ad;
-  grid-area: nav;
 }
 
 .footer {
   background-color: #f39c12;
-  grid-area: footer;
 }
