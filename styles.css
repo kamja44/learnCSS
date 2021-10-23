@@ -3,21 +3,22 @@ body {
   text-align: center;
 }
 .grid {
-  background-color: coral;
   display: grid;
   gap: 5px;
-  height: 150vh;
-  grid-template-columns: repeat(4, 200px);
+  height: 50vh;
+  color: white;
   grid-template-rows: repeat(4, 200px);
-  /* justify-content: center; */
-  /* justify-content 수평으로 움직임 */
-  /* align-content: space-around; */
-  /* align-content 수직으로 움직임 */
-  place-content: end center;
-  /* place-content: align-content justify-content */
+  grid-template-columns: repeat(4, 200px);
 }
+/* 
+  justify-items, align-items -> 모든 요소에 적용됨(그리드 자체가 움직임)
+  justify-self, align-self -> 지정된 요소에만 적용됨
+*/
 .header {
   background-color: #2ecc71;
+  /* align-self: center;
+  justify-self: center; */
+  place-self: center center; /* place-self: align-self justify-self */
 }
 .content {
   background-color: #3498db;
