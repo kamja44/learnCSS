@@ -5,28 +5,31 @@ body {
 .grid {
   display: grid;
   gap: 5px;
-  height: 50vh;
-  color: white;
-  grid-template-rows: repeat(4, 200px);
-  grid-template-columns: repeat(4, 200px);
-}
-/* 
-  justify-items, align-items -> 모든 요소에 적용됨(그리드 자체가 움직임)
-  justify-self, align-self -> 지정된 요소에만 적용됨
-*/
-.header {
-  background-color: #2ecc71;
-  /* align-self: center;
-  justify-self: center; */
-  place-self: center center; /* place-self: align-self justify-self */
-}
-.content {
-  background-color: #3498db;
-}
-.nav {
-  background-color: #8e44ad;
-}
 
-.footer {
-  background-color: #f39c12;
+  grid-template-rows: repeat(1, 100px);
+  grid-template-columns: repeat(4, 100px);
+  grid-auto-rows: 100px;
+  /* grid-template-columns에서 4개의 행을 100px로 만들었는데
+  행이 5개 이상일 경우 5번째 행부터는 rows의 크기를 잃는다.
+  이를 방지하기 위해 grid-auto-rows를 이용하여 
+  행이 5개 이상일 경우 자동으로 지정한 크기만큼 행의 크기를 자동으로 지정한다.
+  grid-template-rows를 사용하지 않고 grid-auto-rows만 사용하도 작동한다.
+  */
+  grid-auto-flow: column;
+  /* 
+    grid-auto-flow:column -> 행의 개수가 grid-template-columns에서 지정한 행의 수보다
+    많을 때 더 많은 행을 만들어내는것이 아닌 더 많은 열을 만들어낸다.
+    즉, flex-direction과 같이 x축과 y축이 바뀐다.
+  */
+  grid-auto-columns: 100px;
+  /* 
+    grid-auto-flow로 열의 개수를 늘렸을 때 늘어나는 열의 크기를 
+    지정한 크기로 지정한다.
+  */
+}
+.item:nth-child(odd) {
+  background-color: cornflowerblue;
+}
+.item:nth-child(even) {
+  background-color: coral;
 }
